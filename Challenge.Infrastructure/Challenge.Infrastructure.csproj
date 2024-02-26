@@ -4,7 +4,7 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <RootNamespace>Challenge.Services</RootNamespace>
+        <RootNamespace>Challenge.Infrastructure</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

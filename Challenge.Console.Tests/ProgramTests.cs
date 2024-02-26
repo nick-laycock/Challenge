@@ -1,31 +1,24 @@
+using Challenge.Application;
+using Challenge.Infrastructure.Services;
+using Challenge.Services.Interfaces;
 using Xunit;
 using Moq;
-using Challenge.Core.Entities;
-using Challenge.Core;
-public class ProgramTests
+
+namespace Challenge.Console.Tests
 {
-    [Fact]
-    public void TestTopUrls()
+    public class LogAnalyserTests
     {
-        // Arrange
-        var logs = GetSampleLog();
-        var mock = new Mock<ILogAnalyser>();
-        mock.Setup(analyser => analyser.TopUrls(3)).Returns(new [] { "http://example.com" });
-
-        var analyser = mock.Object;
-
-        // Act
-        var topUrls = analyser.TopUrls(3);
-
-        // Assert
-        Assert.Single(topUrls);
-        Assert.Equal("http://example.com", topUrls[0]);
-    }
-
-    private IEnumerable<LogDetails> GetSampleLog() {
-        return new List<LogDetails>
+        [Fact]
+        public void Main_ExecutesSuccessfully()
         {
-            new LogDetails("192.168.0.1", "http://example.com")
-        };
+            // Arrange
+            var filePath = "test.log";
+
+            // Act
+            Program.Main(new string[] { filePath });
+
+            // Assert
+            // Add assertions if needed based on the side effects or output of the Main method
+        }
     }
 }
